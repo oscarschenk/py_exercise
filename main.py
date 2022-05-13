@@ -12,18 +12,30 @@ goal_1 = 54
 
 scorers = f'{gullit} {goal_0}, {basten} {goal_1}'
 
-report = f'{gullit} scored in the {goal_0}nd minute {basten} scored in the {goal_1}th minute'
+report = f'{gullit} scored in the {goal_0}nd minute\n{basten} scored in the {goal_1}th minute'
 
 print(scorers)
 
-player = 'Vasyl Rats'
+player = 'Henk de Boer'
 
-first_name = player[0:5]
+plek_spatie = player.find(" ")
 
-last_name = player[6:12]
+first_name = player[:plek_spatie]
+
+last_name = player[plek_spatie + 1:]
+
+last_name_len = len(player[plek_spatie + 1:])
 
 name_short = f'{first_name[0:1]}. {last_name}'
 
-chant = f'{first_name}! {first_name}! {first_name}! {first_name}! {first_name}!'
+chant = ((first_name + "! ") * (len(first_name) - 1)) + first_name + "!"
+
+good_chant = chant[-1] != " "
+
+print(chant)
+
+print(good_chant)
 
 print(report)
+
+# print(report)
